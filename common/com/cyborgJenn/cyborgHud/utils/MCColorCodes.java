@@ -1,4 +1,4 @@
-package cyborgJenn.cyborgHud.utils;
+package com.cyborgJenn.cyborgHud.utils;
 
 public class MCColorCodes {
 	
@@ -21,6 +21,7 @@ public class MCColorCodes {
     public static final String WHITE = "\247f";
 
     //font styles
+    public static final String OBFUSCATED = "\247k";
     public static final String BOLD = "\247l";
     public static final String STRIKETHROUGH = "\247m";
     public static final String UNDERLINE = "\247n";

@@ -1,4 +1,4 @@
-package cyborgJenn.cyborgHud.proxy;
+package com.cyborgJenn.cyborgHud.proxy;
 
 public class ClientProxy extends CommonProxy{
 

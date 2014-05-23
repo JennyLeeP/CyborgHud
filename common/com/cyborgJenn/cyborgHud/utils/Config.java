@@ -1,4 +1,4 @@
-package cyborgJenn.cyborgHud.utils;
+package com.cyborgJenn.cyborgHud.utils;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -16,10 +16,9 @@ public class Config {
 	public static Boolean enableSelectedItem;
 	public static Boolean enableCompass;
 	public static Boolean enableHorseStats;
-	public static Boolean enableCyborgBunnyLogo;
-	public static int hudFontSize;
-	public static int hudFontColor;
-	public static int hudOverlayColor;
+	public static String hudFontColor1;
+	public static String hudFontColor2;
+	public static boolean showDamageBars;
 	
 	public static void init(FMLPreInitializationEvent event) {
 
@@ -49,14 +48,17 @@ public class Config {
 		enableSelectedItem = config.get(configHudOptions, "Enable Selected Item", true).getBoolean(true);
 		enableCompass = config.get(configHudOptions, "Enable Compass", true).getBoolean(true);
 		enableHorseStats = config.get(configHudOptions, "Enable Horse Stats", true).getBoolean(true);
-		hudFontSize = config.get(configHudOptions, "Select Font Size - Integer", 8).getInt();
-		hudFontColor = config.get(configHudOptions, "Hud Font Color - (hex color codes) - ex 0xffffff", 0x0033FF).getInt();
-		hudOverlayColor = config.get(configHudOptions, "Hud Overlay Color - (hex color codes) - ex 0xffffff", 0x0033FF).getInt();
 		enableSelectedItem = config.get(configHudOptions, "Enable CyborgBunny Logo", true).getBoolean(true);
+		showDamageBars = config.get(configHudOptions, "Show Damage Bars or Values - false = values", true).getBoolean(true);
 	}
 	private static void configDebug(Configuration config){
         String debug = "Debug";
         enableDebug = config.get(debug, "enableDebug", false).getBoolean(false);
       
+    }
+	private static void configFontColors(Configuration config){
+        String hudFontColors = "HudFontColors - Valid Colors are WHITE, ORANGE, MAGENTA, LIME";
+        hudFontColor1 = config.get(hudFontColors, "hudFontColor1", "PURPLE").getString();
+        hudFontColor2 = config.get(hudFontColors, "hudFontColor2", "WHITE").getString();
     }
 }
